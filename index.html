@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coastal & Ocean Vibes Gallery</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e3a5f);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+p{
+    color:#d1d5db;
+    margin-bottom:30px;
+    font-size:18px;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.gallery img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:18px;
+    cursor:pointer;
+    transition:0.5s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.gallery img:hover{
+    transform:scale(1.06);
+    box-shadow:0 15px 35px rgba(0,191,255,0.6);
+}
+
+/* LIGHTBOX */
+#lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.95);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+#lightbox img{
+    width:80%;
+    max-width:900px;
+    max-height:80%;
+    border-radius:20px;
+    object-fit:contain;
+}
+
+/* CLOSE BUTTON */
+.close{
+    position:absolute;
+    top:20px;
+    right:25px;
+    font-size:45px;
+    color:white;
+    cursor:pointer;
+    user-select:none;
+}
+
+/* NAV BUTTONS */
+.nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,0.15);
+    border:none;
+    color:white;
+    font-size:30px;
+    padding:14px 18px;
+    border-radius:50%;
+    cursor:pointer;
+    user-select:none;
+}
+
+.prev{ left:20px; }
+.next{ right:20px; }
+
+.nav:hover{
+    background:rgba(255,255,255,0.35);
+}
+
+/* REMOVE FOCUS BORDER */
+button:focus{
+    outline:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+    h1{ font-size:32px; }
+    p{ font-size:16px; }
+    #lightbox img{ width:90%; }
+    .nav{ font-size:24px; padding:10px 14px; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>🏖️ Coastal & Ocean Vibes Gallery</h1>
+<p>Beautiful beaches, sunsets, islands, and ocean views</p>
+
+<div class="gallery">
+
+<img src="https://media.istockphoto.com/id/2234288222/photo/stormy-beach-scenery-with-waves-splash-on-sand-shore-under-scenic-clouds-on-the-sky-at-night.jpg?s=612x612&w=0&k=20&c=FHjyaiz7VzLRu8rpzSLZTrVqSrOamz63Z1EsM9UIltI=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/506499139/photo/coconut-island.jpg?s=612x612&w=0&k=20&c=7DwyKxCh1vjkbMVuE2h6M-7ERu4H7QlVNn0CTH-H_Wc=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/1190865567/photo/night-sky-milky-way-galaxy-stars-and-space-with-sea-or-ocean-and-waves-at-the-beach.jpg?s=612x612&w=0&k=20&c=06uI0g-Fi73gq08mELnHr7fdGy1RkGtNczCTgPtX1W0=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/1190866378/photo/night-sky-milky-way-galaxy-stars-and-space-with-sea-or-ocean-and-waves-at-the-beach.jpg?s=612x612&w=0&k=20&c=0egXUTCxkaarEEPkNOQdXDs7B9FG9lT8JKFNvi6JQZg=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/2184487584/photo/summer-with-sunrise-scene-with-palm-trees-background-as-texture-frame-background.jpg?s=612x612&w=0&k=20&c=anLCeS9FsRYqxXHBjFl-gFa-G_HVmHee6URcGbJOaMA=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/497907104/photo/sunset-in-the-maldives-velidhu-north-ari-atolls.jpg?s=612x612&w=0&k=20&c=6P1eDgVUzrJjla7r0WvPJNiOyQu__VaW28if2qWVUnw=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/1471944438/photo/beautiful-florida-sunset-in-fort-lauderdale-fl.jpg?s=612x612&w=0&k=20&c=HSxWivWPzL7heLhXHg8zHpx9rFiyiYeS2FXAPkf98T8=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/1153015634/photo/coconut-palm-tree-against-colorful-sunset.jpg?s=612x612&w=0&k=20&c=bi1Wxpd8o-VaaLAB4DfBBmSGcrD2YKhG9Xge9Ewf1c8=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/1182818744/photo/picturesque-view-of-the-pure-ocean-and-the-idyllic-exotic-island.jpg?s=612x612&w=0&k=20&c=meSzUE6_AAcJ87Ythyv4OQ42044oX8WMPECX8WqWIQg=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/1483244839/photo/aerial-view-with-beach-in-wave-of-turquoise-sea-water-shot-top-view-of-beautiful-white-sand.jpg?s=612x612&w=0&k=20&c=xwp7eQ-lQFMqcfeDPWdDpG4WJyvw1jbCHsGwFdM0uXU=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/2214640572/photo/tropical-sea-beach-natural-background-with-blue-sky-palm-trees-and-white-clouds-in-blue-sky.jpg?s=612x612&w=0&k=20&c=RXRmpHGDp3ZVcP6g4icYdAlRoXPRyk1-EVl7PaNUBg8=" onclick="openLightbox(this)">
+<img src="https://media.istockphoto.com/id/1171402988/photo/aerial-view-of-umbrellas-palms-on-the-sandy-beach-of-indian-ocean-at-sunset-summer-holiday-in.jpg?s=612x612&w=0&k=20&c=qTQsYy-E1NaVZ_aPechGNFeayOrFLFjjYsFE8Gl4zIw=" onclick="openLightbox(this)">
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <span class="close" onclick="closeLightbox()">×</span>
+
+    <button class="nav prev" onclick="prevImage()">❮</button>
+    <img id="lightbox-img">
+    <button class="nav next" onclick="nextImage()">❯</button>
+</div>
+
+<script>
+const images = document.querySelectorAll(".gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+let currentIndex = 0;
+
+function openLightbox(img){
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+
+    images.forEach((image,index)=>{
+        if(image.src === img.src){
+            currentIndex = index;
+        }
+    });
+}
+
+function closeLightbox(){
+    lightbox.style.display = "none";
+}
+
+function nextImage(){
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+}
+
+function prevImage(){
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+}
+
+lightbox.addEventListener("click", function(e){
+    if(e.target === lightbox){
+        closeLightbox();
+    }
+});
+</script>
+
+</body>
+</html>
